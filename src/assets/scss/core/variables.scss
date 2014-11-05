@@ -1,0 +1,27 @@
+// Shadow effects
+$shadow-1: 0 -1px 1.5px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);
+$shadow-2: 0 0 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23);
+$shadow-3: 0 -1px 10px rgba(0, 0, 0, 0.19), 0 4px 5px rgba(0, 0, 0, 0.23);
+
+$shadow-vertical: 0 1px 1px rgba(0, 0, 0, 0.24);
+$shadow-right: 1px 0 1px rgba(0, 0, 0, 0.24);
+
+// Animations
+$ease-out-quint: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$ease-swift-out: cubic-bezier(.55, 0, .1, 1);
+$ease-swift-in: cubic-bezier(.1, 1, .55, 0);
+
+// Ripple animation used on buttons
+@keyframes anim-ripples {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        width: 200%;
+        padding-bottom: 200%;
+        opacity: 0;
+    }
+}
