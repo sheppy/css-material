@@ -6,28 +6,19 @@
     <title>{{ title }} - CSS Material</title>
 
     <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,500,300">-->
-    <link rel="stylesheet" href="{{assets}}/assets/css/main.css">
+    <!-- vendor:css -->
+    <!-- endinject -->
 
-
-    <style>
-        .component-definition {}
-        .component-definition > dt {
-            margin-bottom: 1em;
-        }
-
-        .component-definition > dt:after {
-            content: ":";
-        }
-        .component-definition > dd {
-            margin-bottom: 2em;
-        }
-    </style>
+    <!-- inject:css -->
+    <!-- endinject -->
 </head>
 <body>
+    {{> body }}
 
-    <main>
-        {{> body }}
-    </main>
+    <!-- vendor:js -->
+    <!-- endinject -->
 
+    <!-- inject:js -->
+    <!-- endinject -->
 </body>
 </html>

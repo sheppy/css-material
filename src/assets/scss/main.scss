@@ -1,3 +1,19 @@
 $color-primary: "light-blue";
 
 @import "material/material";
+
+
+.component-definition {
+}
+
+.component-definition > dt {
+    margin-bottom: 1em;
+}
+
+.component-definition > dt:after {
+    content: ":";
+}
+
+.component-definition > dd {
+    margin-bottom: 2em;
+}

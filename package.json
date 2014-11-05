@@ -20,6 +20,7 @@
     "gulp-cached": "~1.0.1",
     "gulp-load-plugins": "~0.7.1",
     "run-sequence": "~1.0.1",
-    "gulp-assemble": "~0.1.7"
+    "gulp-assemble": "~0.1.7",
+    "gulp-plumber": "~0.6.6"
   }
 }

@@ -11,21 +11,22 @@ var $ = require("gulp-load-plugins")();
 
 
 gulp.task("css", function () {
-    return gulp.src("src/assets/scss/*.scss")
-        .pipe($.cached("css"))
+    return gulp.src("src/assets/scss/**/*.scss")
+        .pipe($.plumber({errorHandler: $.notify.onError("Error: <%= error.message %>")}))
+        //.pipe($.cached("css"))
         .pipe($.sass({
             style: "expanded"
         }))
         .pipe($.autoprefixer("last 2 version", "safari 5", "ie 9", "opera 12.1", "ios 6", "android 4"))
         .pipe(gulp.dest(DIST + "/assets/css"))
-        .pipe($.notify({message: "CSS task complete", onLast: true}))
         .pipe(browserSync.reload({stream: true}));
 });
 
 
 gulp.task("html", function () {
     return gulp.src("src/views/pages/**/*.hbs")
-        .pipe($.cached("html"))
+        .pipe($.plumber({errorHandler: $.notify.onError("Error: <%= error.message %>")}))
+        //.pipe($.cached("html"))
 
         .pipe($.assemble({
             layoutdir: "src/views/layouts/",
@@ -34,8 +35,7 @@ gulp.task("html", function () {
                 "src/views/partials/**/*.hbs",
                 "src/views/components/**/*.hbs"
             ],
-            data: "src/views/data/**/*.json",
-            assets: DIST
+            data: "src/views/data/**/*.json"
         }))
 
         .pipe($.inject(gulp.src("assets/css/**/*.css", {
@@ -43,14 +43,13 @@ gulp.task("html", function () {
             cwd: DIST
         }), {addRootSlash: false}))
 
-        .pipe(gulp.dest(DIST))
-        .pipe($.notify({message: "HTML task complete", onLast: true}));
+        .pipe(gulp.dest(DIST));
 });
 
 
 gulp.task("fonts", function () {
     return gulp.src("src/assets/font/**/*.*")
-        .pipe(gulp.dest(DIST + "/assets/font/"))
+        .pipe(gulp.dest(DIST + "/assets/font/"));
 });
 
 
@@ -58,7 +57,7 @@ gulp.task("clean", function (cb) {
     del([
         DIST + "/assets",
         DIST + "/**/*.html"
-    ], cb)
+    ], cb);
 });
 
 
@@ -86,7 +85,7 @@ gulp.task("watch", ["browser-sync"], function () {
     gulp.watch("src/assets/scss/**/*.scss", ["css"]);
 
     // Watch html files
-    gulp.watch("src/views/**/*.html", ["html"]);
+    gulp.watch("src/views/**/*.hbs", ["html"]);
 
     // Reloading
     gulp.watch("dist/**/*.html", ["bs-reload"]);
