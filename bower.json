@@ -1,0 +1,16 @@
+{
+  "name": "css-material",
+  "version": "0.0.0",
+  "authors": [
+    "Chris Sheppard <github@chrissheppard.co.uk>"
+  ],
+  "license": "GPL-2.0",
+  "private": true,
+  "main": "src/assets/scss/material/_material.scss",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "dist"
+  ]
+}
