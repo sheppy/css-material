@@ -29,6 +29,11 @@ module.exports = function (grunt) {
         //----------------------------------------------------------------------
         // Compile sass
         sass: {
+            options: {
+                includePaths: [
+                    "./node_modules/sass-list-maps"
+                ]
+            },
             dist: {
                 options: {
                     outputStyle: "nested",
@@ -47,6 +52,19 @@ module.exports = function (grunt) {
                 browsers: ["last 4 versions", "> 5%", "ie 9", "Android >= 4", "OperaMini >= 5"]
             },
             "dist/assets/css/main.css": "dist/assets/css/main.css"
+        },
+
+        //----------------------------------------------------------------------
+        // Copy
+        copy: {
+            fonts: {
+                files: [{
+                    expand: true, flatten: false,
+                    dest: "dist/assets/font/",
+                    cwd: "src/assets/font/",
+                    src: ["*.*"]
+                }]
+            }
         },
 
         //----------------------------------------------------------------------
@@ -80,7 +98,7 @@ module.exports = function (grunt) {
         watch: {
             assemble: {
                 // Rebuild handlebars and reload
-                files: ["src/views/**/*.hbs", "src/views/data/**/*.json"],
+                files: ["src/views/pages/**/*.hbs", "src/views/**/*.hbs", "src/views/data/**/*.json"],
                 tasks: ["html"],
                 options: {
                     spawn: false,
@@ -102,6 +120,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("assemble");
     grunt.loadNpmTasks("grunt-sass");
     grunt.loadNpmTasks("grunt-autoprefixer");
+    grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-connect");
     grunt.loadNpmTasks("grunt-concurrent");
     grunt.loadNpmTasks("grunt-contrib-watch");
