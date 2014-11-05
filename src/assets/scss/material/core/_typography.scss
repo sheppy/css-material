@@ -1,0 +1,84 @@
+html {
+    font-family: robotoregular, sans-serif;
+    font-size: 14px;
+    color: material-color($color-text, 900);
+}
+
+.display-4 {
+    font-family: robotolight, sans-serif;
+    font-weight: 300;
+    line-height: 1;
+    font-size: 112px;
+    color: material-color($color-text, 600);
+    white-space: nowrap;
+}
+
+.display-3 {
+    font-family: robotoregular, sans-serif;
+    font-size: 56px;
+    line-height: 1;
+    font-weight: 400;
+    color: material-color($color-text, 600);
+    white-space: nowrap;
+}
+
+.display-2 {
+    font-family: robotoregular, sans-serif;
+    font-size: 45px;
+    line-height: 48px;
+    font-weight: 400;
+    color: material-color($color-text, 600);
+    white-space: nowrap;
+}
+
+.display-1 {
+    font-family: robotoregular, sans-serif;
+    font-size: 34px;
+    line-height: 40px;
+    font-weight: 400;
+    color: material-color($color-text, 600);
+    white-space: nowrap;
+}
+
+.headline {
+    font-family: robotoregular, sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+    color: material-color($color-text, 900);
+}
+
+.title {
+    font-family: robotomedium, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    color: material-color($color-text, 900);
+}
+
+.subhead {
+    font-family: robotoregular, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: material-color($color-text, 900);
+}
+
+.body {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.1px;
+    color: material-color($color-text, 900);
+}
+
+.caption {
+    font-family: robotoregular, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: material-color($color-text, 600);
+}
+
+// Generic margins
+p, ul, ol, blockquote, table {
+    margin: 0 0 20px;
+}

@@ -1,0 +1,84 @@
+.button {
+    border-radius: 1px;
+    box-sizing: border-box;
+    font-family: robotomedium, sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border: 0;
+    display: inline-block;
+    text-decoration: none;
+    padding: 11px 0;
+    line-height: 1;
+    text-align: center;
+    min-width: 88px;
+    background: transparent;
+    color: material-color($color-text, 900);
+    cursor: pointer;
+    transition: all .4s $ease-out-quint;
+
+    &:focus,
+    &:hover {
+        background: material-color($color-text, 500, 0.2);
+        outline: 0;
+    }
+    &:active {
+        background: material-color($color-text, 500, 0.4);
+    }
+
+    &.button--primary {
+        color: material-color($color-primary, 500);
+    }
+
+    &[disabled] {
+        color: material-color($color-text, 500, 0.8);
+        background: material-color($color-text, 500, 0.1);
+        box-shadow: none;
+        cursor: default;
+
+        &:focus,
+        &:hover,
+        &:active {
+            background: material-color($color-text, 500, 0.1);
+            box-shadow: none;
+        }
+    }
+}
+
+.button--raised {
+    box-shadow: $shadow-1;
+
+    &:focus {
+        box-shadow: $shadow-2;
+    }
+    &:active {
+        box-shadow: $shadow-3;
+    }
+
+    // Spacing between buttons
+    + .button--raised {
+        margin-left: 16px;
+    }
+
+    &.button--primary {
+        color: material-color($color-text, 0);
+        background: material-color($color-primary, 500);
+        &:focus,
+        &:hover {
+            background: material-color($color-primary, 600);
+        }
+        &:active {
+            background: material-color($color-primary, 700);
+        }
+
+        &[disabled] {
+            color: material-color($color-text, 500, 0.8);
+            background: material-color($color-text, 500, 0.1);
+
+            &:focus,
+            &:hover,
+            &:active {
+                background: material-color($color-text, 500, 0.1);
+            }
+        }
+    }
+}

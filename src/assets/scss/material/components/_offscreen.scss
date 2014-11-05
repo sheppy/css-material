@@ -1,0 +1,30 @@
+.offscreen-shift {
+    transition: transform 0.3s ease 0s;
+    transform: translate3d(0, 0, 0);
+}
+
+.offscreen-left {
+    transition: transform 0.3s ease 0s;
+    transform: translateX(-250px);
+    transform: translate3d(-250px, 0, 0);
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 249px;
+    height: 100%;
+    max-height: 100vh;
+    z-index: 1;
+    border-right: 1px solid #D1D1D1;
+}
+
+.offscreen-left_active .offscreen-shift {
+    transform: translateX(250px);
+    transform: translate3d(250px, 0, 0);
+}
+
+.offscreen-left_active .offscreen-left {
+    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
+}

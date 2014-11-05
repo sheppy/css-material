@@ -1,0 +1,5 @@
+@function material-color($color-index, $level: 500, $alpha: 1) {
+    $color-group: map-get($colors, $color-index);
+    $color: map-get($color-group, quote($level));
+    @return rgba($color, $alpha);
+}
