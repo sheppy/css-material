@@ -7,37 +7,45 @@ html {
 .display-4 {
     font-family: robotolight, sans-serif;
     font-weight: 300;
-    line-height: 1;
+    line-height: 1.2;
     font-size: 112px;
     color: material-color($color-text, 600);
     white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .display-3 {
     font-family: robotoregular, sans-serif;
     font-size: 56px;
-    line-height: 1;
+    line-height: 1.2;
     font-weight: 400;
     color: material-color($color-text, 600);
     white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .display-2 {
     font-family: robotoregular, sans-serif;
     font-size: 45px;
-    line-height: 48px;
+    line-height: 54 px;
     font-weight: 400;
     color: material-color($color-text, 600);
     white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .display-1 {
     font-family: robotoregular, sans-serif;
     font-size: 34px;
-    line-height: 40px;
+    line-height: 42px;
     font-weight: 400;
     color: material-color($color-text, 600);
     white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .headline {
@@ -52,8 +60,10 @@ html {
     font-family: robotomedium, sans-serif;
     font-size: 20px;
     font-weight: 500;
-    white-space: nowrap;
     color: material-color($color-text, 900);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .subhead {
