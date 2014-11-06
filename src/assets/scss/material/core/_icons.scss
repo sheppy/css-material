@@ -30,7 +30,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         @if $replace {
-            font-size: 1rem;
+            font-size: 24px;
         }
         @content;
     }
@@ -41,3 +41,22 @@ $icon-more-vert: "\e601";
 $icon-back: "\e602";
 $icon-search: "\e603";
 $icon-check: "\e604";
+
+.icon-menu {
+    @include icon($icon-menu, "before", true) {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+.icon-more-vert {
+    @include icon($icon-more-vert, "before", true) {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+.icon-search {
+    @include icon($icon-search, "before", true) {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
