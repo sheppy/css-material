@@ -3,3 +3,10 @@
     $color: map-get($color-group, quote($level));
     @return rgba($color, $alpha);
 }
+
+
+// Line-height = Font-size + Leading/2
+@function leading($leading, $font-size) {
+    @return $font-size + ($leading / 2);
+
+}

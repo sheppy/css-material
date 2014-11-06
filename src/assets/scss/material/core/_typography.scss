@@ -29,7 +29,7 @@ html {
 .display-2 {
     font-family: robotoregular, sans-serif;
     font-size: 45px;
-    line-height: 54 px;
+    line-height: leading(54px, 45px);
     font-weight: 400;
     color: material-color($color-text, 600);
     white-space: nowrap;
@@ -40,7 +40,7 @@ html {
 .display-1 {
     font-family: robotoregular, sans-serif;
     font-size: 34px;
-    line-height: 42px;
+    line-height: leading(42px, 34px);
     font-weight: 400;
     color: material-color($color-text, 600);
     white-space: nowrap;
@@ -51,7 +51,7 @@ html {
 .headline {
     font-family: robotoregular, sans-serif;
     font-size: 24px;
-    line-height: 32px;
+    line-height: leading(32px, 24px);
     font-weight: 400;
     color: material-color($color-text, 900);
 }
@@ -59,17 +59,22 @@ html {
 .title {
     font-family: robotomedium, sans-serif;
     font-size: 20px;
+    line-height: leading(32px, 20px);
     font-weight: 500;
     color: material-color($color-text, 900);
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+
+    &__primary {
+        color: material-color($color-primary, 500);
+    }
 }
 
 .subhead {
     font-family: robotoregular, sans-serif;
     font-size: 16px;
-    line-height: 24px;
+    line-height: leading(24px, 16px);
     font-weight: 400;
     color: material-color($color-text, 900);
 
@@ -77,7 +82,7 @@ html {
     &__grid {
         padding: 0 16px;
         font-size: 14px;
-        line-height: 22px;
+        line-height: leading(22px, 14px);
         font-family: robotomedium, sans-serif;
         color: material-color($color-text, 600);
     }
@@ -87,7 +92,7 @@ html {
 
 .body {
     font-size: 14px;
-    line-height: 24px;
+    line-height: leading(24px, 14px);
     letter-spacing: -0.1px;
     color: material-color($color-text, 900);
 }
