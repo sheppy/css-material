@@ -1,0 +1,21 @@
+.card {
+    border-radius: 2px;
+    margin: 8px;
+    box-shadow: $shadow-2;
+}
+
+.card-header {}
+
+.card-content {
+    padding: 16px;
+
+    > :first-child {
+        margin-top: 0;
+    }
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.card-footer {
+}
