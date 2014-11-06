@@ -62,7 +62,18 @@ html {
     line-height: 24px;
     font-weight: 400;
     color: material-color($color-text, 900);
+
+    &__list,
+    &__grid {
+        padding: 0 16px;
+        font-size: 14px;
+        line-height: 22px;
+        font-family: robotomedium, sans-serif;
+        color: material-color($color-text, 600);
+    }
 }
+
+
 
 .body {
     font-size: 14px;
