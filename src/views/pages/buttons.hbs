@@ -1,1 +1,48 @@
-{{> button}}
+<h1 class="title">Buttons</h1>
+
+<blockquote>
+    <p>A button consists of text and/or an image that clearly communicates what
+        action will occur when the user touches it
+    </p>
+
+    <cite><a
+            href="http://www.google.com/design/spec/components/buttons.html">Buttons
+        - Google design guidelines</a></cite>
+</blockquote>
+
+<dl class="component-definition">
+    <dt class="subhead">Flat button</dt>
+    <dd>
+        {{> button text="Normal"}}
+    </dd>
+
+    <dt class="subhead">Flat button disabled</dt>
+    <dd>
+        {{> button text="Disabled" disabled=true}}
+    </dd>
+
+    <dt class="subhead">Flat button primary</dt>
+    <dd>
+        {{> button text="Primary" primary=true}}
+    </dd>
+
+    <dt class="subhead">Raised button</dt>
+    <dd>
+        {{> button text="Normal" raised=true}}
+    </dd>
+
+    <dt class="subhead">Raised button primary</dt>
+    <dd>
+        {{> button text="Primary" raised=true primary=true}}
+    </dd>
+
+    <dt class="subhead">Raised button disabled</dt>
+    <dd>
+        {{> button text="Disabled" raised=true disabled=true}}
+    </dd>
+
+    <dt class="subhead">Raised button primary disabled</dt>
+    <dd>
+        {{> button text="Disabled" raised=true disabled=true primary=true}}
+    </dd>
+</dl>
