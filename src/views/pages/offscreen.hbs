@@ -1,14 +1,23 @@
-<div class="offscreen-left_active">
+<nav class="offscreen-left">
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</nav>
 
-    <nav class="offscreen-left">
-        <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-        </ul>
-    </nav>
+<main class="application offscreen-shift">
+    <h1 class="title">Main Page</h1>
+    <p>Click anywhere to toggle the nav</p>
+</main>
 
-    <main class="application offscreen-shift">
-        Main page
-    </main>
-</div>
+<script>
+    document.addEventListener("click", function () {
+        var body = document.body;
+        if (body.className) {
+            body.className = "";
+        } else {
+            body.className = "offscreen-left_active";
+        }
+    });
+</script>
