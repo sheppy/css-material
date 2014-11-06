@@ -1,0 +1,71 @@
+.switch {
+    $switch-thumb-on: material-color($color-primary, 500);
+    $switch-track-on: material-color($color-primary, 500, 0.5);
+
+    $switch-thumb-off: material-color("grey", 50);
+    $switch-track-off: material-color("grey", 1000, 0.26);
+
+    $switch-thumb-disabled: material-color("grey", 400);
+    $switch-track-disabled: material-color("grey", 1000, 0.12);
+
+    // Hide default radio
+    input[type="checkbox"] {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    // Make some room for the radio
+    input[type="checkbox"] + label {
+        cursor: pointer;
+        position: relative;
+        padding-left: 55px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            height: 14px;
+            width: 36px;
+            background: $switch-track-off;
+            border-radius: 6px;
+            margin: 0 5px;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: $switch-thumb-off;
+            border-radius: 50%;
+            transition: all 0.5s $ease-out-quint;
+            box-shadow: $shadow-1;
+        }
+    }
+
+    // Checked
+    input[type="checkbox"]:checked + label {
+        &:before {
+            background: $switch-track-on;
+        }
+
+        &:after {
+            background: $switch-thumb-on;
+            left: 26px;
+        }
+    }
+
+    // Disabled
+    input[type="checkbox"][disabled] + label {
+        &:before {
+            background: $switch-track-disabled;
+        }
+
+        &:after {
+            background: $switch-thumb-disabled;
+        }
+    }
+}

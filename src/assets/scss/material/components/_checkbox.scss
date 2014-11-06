@@ -1,0 +1,76 @@
+.checkbox {
+    $checkbox-border-color: material-color("grey", 1000, 0.54);
+    $checkbox-background-color: #fff;
+    $checkbox-background-checked-color: material-color($color-primary, 500);
+    $checkbox-tick-color: #fff;
+    $checkbox-disabled-color: material-color("grey", 1000, 0.26);
+
+    // Hide default checkbox
+    input[type="checkbox"] {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    // Make some room for the checkbox
+    input[type="checkbox"] + label {
+        cursor: pointer;
+        position: relative;
+        padding-left: 25px;
+
+        // Checkbox box
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 1px;
+            width: 14px;
+            height: 14px;
+            border: 2px solid $checkbox-border-color;
+            background: $checkbox-background-color;
+            border-radius: 2px;
+            transition: all 0.5s $ease-out-quint;
+        }
+
+        // Checkbox tick
+        @include icon($icon-check, "after") {
+            position: absolute;
+            left: 0;
+            top: 1px;
+            font-size: 16px;
+            font-weight: 700;
+            color: $checkbox-tick-color;
+            transform: scale(0);
+            transition: all 0.5s $ease-out-quint;
+        }
+    }
+
+    // Checked
+    input[type="checkbox"]:checked + label {
+        &:before {
+            background: $checkbox-background-checked-color;
+            border-color: $checkbox-background-checked-color;
+        }
+        &:after {
+            transform: scale(1);
+        }
+    }
+
+    // Disabled
+    input[type="checkbox"][disabled] + label {
+        &:before {
+            background: $checkbox-background-color;
+            border-color: $checkbox-disabled-color;
+        }
+        &:after {
+            color: $checkbox-background-color;
+        }
+    }
+
+    // Disabled and checked
+    input[type="checkbox"][disabled]:checked + label {
+        &:before {
+            background: $checkbox-disabled-color;
+            border-color: transparent;
+        }
+    }
+}

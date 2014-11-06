@@ -1,0 +1,67 @@
+.radio {
+    $radio-color: material-color("grey", 1000, 0.54);
+    $radio-background-color: #fff;
+    $radio-checked-color: material-color($color-primary, 500);
+    $radio-disabled-color: material-color("grey", 1000, 0.26);
+
+    // Hide default radio
+    input[type="radio"] {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    // Make some room for the radio
+    input[type="radio"] + label {
+        cursor: pointer;
+        position: relative;
+        padding-left: 25px;
+
+        // Radio box
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 1px;
+            width: 14px;
+            height: 14px;
+            border: 2px solid $radio-color;
+            background: $radio-background-color;
+            border-radius: 50%;
+            transition: all 0.5s $ease-out-quint;
+        }
+
+        // Radio tick
+        &:after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: $radio-checked-color;
+            border-radius: 50%;
+            transition: all 0.5s $ease-out-quint;
+            transform: scale(0);
+        }
+    }
+
+    // Checked
+    input[type="radio"]:checked + label {
+        &:before {
+            border-color: $radio-checked-color;
+        }
+        &:after {
+            transform: scale(1);
+        }
+    }
+
+    // Disabled
+    input[type="radio"][disabled] + label {
+        &:before {
+            border-color: $radio-disabled-color;
+        }
+        &:after {
+            background: $radio-disabled-color;
+        }
+    }
+}
