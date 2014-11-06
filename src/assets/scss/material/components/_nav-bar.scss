@@ -1,17 +1,10 @@
 .nav-bar {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 4px;
     box-sizing: border-box;
     min-height: 56px;
 
-    // Visuals
-    box-shadow: $shadow-vertical;
-    background: material-color($color-primary);
-    // TODO: Color
+    * {
+        color: inherit;
+    }
 }
 
 .nav-bar-title {
