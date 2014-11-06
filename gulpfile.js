@@ -9,13 +9,19 @@ var runSequence = require("run-sequence");
 // load plugins
 var $ = require("gulp-load-plugins")();
 
+var onError = function (err) {
+    //gutil.beep();
+    $.notify.onError("Error: <%= err.message %>");
+    console.log(err);
+};
 
 gulp.task("css", function () {
     return gulp.src("src/assets/scss/**/*.scss")
-        .pipe($.plumber({errorHandler: $.notify.onError("Error: <%= error.message %>")}))
+        .pipe($.plumber({errorHandler: onError}))
         //.pipe($.cached("css"))
         .pipe($.sass({
-            style: "expanded"
+            style: "expanded",
+            errLogToConsole: true
         }))
         .pipe($.autoprefixer("last 2 version", "safari 5", "ie 9", "opera 12.1", "ios 6", "android 4"))
         .pipe(gulp.dest(DIST + "/assets/css"))
@@ -25,7 +31,7 @@ gulp.task("css", function () {
 
 gulp.task("html", function () {
     return gulp.src("src/views/pages/**/*.hbs")
-        .pipe($.plumber({errorHandler: $.notify.onError("Error: <%= error.message %>")}))
+        .pipe($.plumber({errorHandler: onError}))
         //.pipe($.cached("html"))
 
         .pipe($.assemble({
