@@ -1,7 +1,7 @@
 .application {
     overflow: hidden;
 
-    .nav-bar ~ & {
-        padding-top: 50px; // height of navbar
+    .app-bar ~ & {
+        padding-top: 56px; // height of app-bar
     }
 }
