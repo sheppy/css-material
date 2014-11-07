@@ -10,9 +10,14 @@ var runSequence = require("run-sequence");
 var $ = require("gulp-load-plugins")();
 
 var onError = function (err) {
-    //gutil.beep();
-    $.notify.onError("Error: <%= err.message %>");
-    console.log(err);
+    $.notify.onError({
+        title: "Gulp",
+        subtitle: "Failure!",
+        message: "Error: <%= error.message %>",
+        sound: "Beep"
+    })(err);
+
+    this.emit("end");
 };
 
 gulp.task("css", function () {
@@ -20,8 +25,7 @@ gulp.task("css", function () {
         .pipe($.plumber({errorHandler: onError}))
         //.pipe($.cached("css"))
         .pipe($.sass({
-            style: "expanded",
-            errLogToConsole: true
+            style: "expanded"
         }))
         .pipe($.autoprefixer("last 2 version", "safari 5", "ie 9", "opera 12.1", "ios 6", "android 4"))
         .pipe(gulp.dest(DIST + "/assets/css"))
