@@ -4,4 +4,7 @@
     .app-bar ~ & {
         padding-top: 56px; // height of app-bar
     }
+    .app-bar:empty ~ & {
+        padding-top: 0;
+    }
 }
