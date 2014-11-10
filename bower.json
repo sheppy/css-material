@@ -12,5 +12,8 @@
     "node_modules",
     "bower_components",
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "sass-list-maps": "~1.0.0"
+  }
 }
