@@ -25,7 +25,10 @@ gulp.task("css", function () {
         .pipe($.plumber({errorHandler: onError}))
         //.pipe($.cached("css"))
         .pipe($.sass({
-            style: "expanded"
+            style: "expanded",
+            includePaths: [
+                "./bower_components/sass-list-maps"
+            ]
         }))
         .pipe($.autoprefixer("last 2 version", "safari 5", "ie 9", "opera 12.1", "ios 6", "android 4"))
         .pipe(gulp.dest(DIST + "/assets/css"))

@@ -22,5 +22,8 @@
     "run-sequence": "~1.0.1",
     "gulp-assemble": "~0.1.7",
     "gulp-plumber": "~0.6.6"
+  },
+  "dependencies": {
+    "sass-list-maps": "^1.0.0-b"
   }
 }
