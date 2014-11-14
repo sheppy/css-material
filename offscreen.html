@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <title> - CSS Material</title>
+
+    <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,500,300">-->
+    <!-- vendor:css -->
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- endinject -->
+</head>
+<body>
+    <nav class="offscreen-left">
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</nav>
+
+<main class="application offscreen-shift">
+    <h1 class="title">Main Page</h1>
+    <p>Click anywhere to toggle the nav</p>
+</main>
+
+<script>
+    document.addEventListener("click", function () {
+        var body = document.body;
+        if (body.className) {
+            body.className = "";
+        } else {
+            body.className = "offscreen-left_active";
+        }
+    });
+</script>
+
+    <!-- vendor:js -->
+    <!-- endinject -->
+
+    <!-- inject:js -->
+    <!-- endinject -->
+</body>
+</html>
